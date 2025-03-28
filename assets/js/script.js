@@ -1,19 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
     const projects = [
         {
-            title: "Building My Own Cybersecurity Blog & Portfolio",
+            title: "Howest CTF Project Week",
             description: [
-                "A central place to share my cybersecurity journey, document experiences, and highlight personal projects was something I always wanted. So, I built my own website. A platform where I can write about the competitions I’ve participated in, the events I’ve attended, and the projects I’m working on.",
-                "The design is centered around a dark, neon-infused theme—fitting for a cybersecurity-focused space and perfectly complementing my logo. Every element was selected to reflect the aesthetics of ethical hacking and digital security. The site includes a dedicated blog section for in-depth write-ups on competitions like the Cyber Security Challenge Belgium, Tech&Meet sessions, and other cybersecurity topics. Additionally, there's a project section where I can showcase my work and developments.",
-                "For the technical side, I kept it simple yet functional. The site is built using plain HTML, CSS, and JavaScript — no unnecessary frameworks, just a lightweight, efficient setup. The UI features smooth dynamic overlays to display blog posts and projects without clutter, maintaining a clean user experience. Everything is fully responsive, ensuring it looks sharp and works seamlessly across both desktop and mobile devices.",
-                "Having my own platform gives me the flexibility to shape it however I want and evolve it over time. Whether it's writing about cybersecurity, sharing insights, or presenting future projects, this website serves as the foundation for it all.",
+                "During the Cybersecurity Project Week at Howest, I took part in a Capture The Flag (CTF) competition — an intense, hands-on challenge that tested both technical skills and teamwork under pressure. Hosted on the CTFd platform, the competition simulated real-world cybersecurity scenarios across a broad range of topics.",
+                "The CTF featured challenges in cryptography, steganography, reverse engineering, forensics, web exploitation, trivia, programming, and more. Some tasks had us decoding encrypted messages or analyzing memory dumps, while others involved stress testing Docker containers and patching binaries. Each challenge required creativity, persistence, and a strategic mindset.",
+                "Our team collaborated closely, dividing tasks based on individual strengths and constantly sharing insights. We pushed through difficult challenges, celebrated small victories, and refined our approach along the way. By the end of the week, we earned 4th place on the official scoreboard — a result we're proud of.",
+                "More than the score, the experience deepened my interest in cybersecurity, sharpened my problem-solving skills, and reinforced the value of teamwork. It was an intense and rewarding week that reminded me why I love diving into systems, breaking things apart, and learning how they work.",
             ],
             socials: [
                 {
-                    platform: "GitHub",
-                    link: "https://www.github.com/HydraXploit/hydraxploit.github.io",
-                    icon: "./assets/images/github.ico",
-                    tooltip: "Webpage source code on GitHub"
+                    platform: "CTFd",
+                    link: "https://ctf.cyber3lab.be",
+                    icon: "./assets/media/ctfd-leaderboard.png",
+                    tooltip: "Visit the CTF platform"
                 }
             ]
         }
