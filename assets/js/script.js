@@ -23,15 +23,16 @@ document.addEventListener("DOMContentLoaded", function () {
             ]
         }
     ];
+
     const blogs = [
         {
-            title: "Tech&Meet: Hack The Holidays - Insights from Belgium's Top Ethical Hacker",
+            title: "Tech&Meet: Insights from Belgium's Top Ethical Hacker",
             description: [
-                "On December 17, 2024, I attended a Tech&Meet session at Howest University of Applied Sciences, featuring Robbe Verwilghen, a distinguished alumnus and renowned ethical hacker. Robbe, who hails from Lebbeke, earned the prestigious title of 'Ethical Government Hacker of 2024,' securing a highly sought-after SANS training course and GIAC certification, valued at over €10,000. Alongside this achievement, he humorously embraced the title 'The Dupe King' for reporting the highest number of duplicate findings during the competition.",
-                "Robbe shared his experiences participating in Belgium’s government hacking tournament, 'Hack The Government,' where ethical hackers were invited to test the security of government systems. Due to the classified nature of the findings, he couldn’t disclose specific vulnerabilities he uncovered, but he offered valuable insights into his approach. His key takeaway? 'Act dumb and click on everything'—a phrase that, in the world of ethical hacking, underscores the importance of thinking outside the box and exploring unexpected attack vectors.",
-                "Beyond competition strategies, Robbe walked us through his journey in cybersecurity, from bug bounty hunting to becoming a QA engineer and penetration tester. His work with Intigriti, a leading European cybersecurity firm, provided fascinating insights into real-world security testing, payload crafting, and methodologies like SQL injection. He also shared useful resources and scripts for testing vulnerabilities, helping attendees gain a better understanding of how ethical hackers analyze and secure digital systems.",
-                "Despite the limitations on discussing classified details, Robbe managed to deliver an engaging and insightful session. His energy and passion for cybersecurity were evident, making it clear why he’s one of Belgium’s top ethical hackers. The event reinforced the importance of ethical hacking in strengthening national security and highlighted the opportunities available in this field for those willing to dive deep into the world of cybersecurity.",
-                "Overall, this Tech&Meet session was both inspiring and informative. Hearing firsthand from someone who has actively contributed to securing government infrastructure was an incredible experience. Robbe’s journey is proof that curiosity, persistence, and a hacker mindset can open doors to exciting and impactful careers in cybersecurity."
+                "On December 17, 2024, I had the opportunity to attend a Tech&Meet talk at Howest University, where Robbe Verwilghen—an accomplished ethical hacker and Howest alumnus—shared his story. Hailing from Lebbeke, Robbe was named 'Ethical Government Hacker of 2024' and earned an exclusive SANS training and GIAC certification worth over €10,000. He lightheartedly embraced the nickname 'The Dupe King' for logging the most duplicate reports during the challenge.",
+                "The talk centered around Robbe’s participation in Belgium’s government cybersecurity initiative, 'Hack The Government,' which invites ethical hackers to assess and uncover vulnerabilities in public systems. Although much of the work is classified, he gave us a glimpse into his mindset and creative approach—summed up in his phrase: 'Act dumb and click on everything,' a reminder that unconventional thinking can lead to surprising results.",
+                "He also reflected on his broader career in cybersecurity, from bug bounty hunting to roles as a QA engineer and pentester. His work at Intigriti, one of Europe’s top security platforms, allowed him to explore advanced techniques like SQL injection, payload crafting, and real-world penetration testing. Robbe generously shared resources and scripts, helping attendees better understand how ethical hackers probe systems and discover flaws.",
+                "Even with restrictions on what he could publicly reveal, Robbe delivered an inspiring and practical talk. His enthusiasm was infectious, and it was clear why he's so highly regarded in the Belgian cybersecurity scene. The session emphasized the growing role of ethical hacking in national defense and digital safety.",
+                "In the end, this Tech&Meet experience was not just informative—it was motivating. Robbe's journey showed how passion, curiosity, and a problem-solving mindset can lead to exciting opportunities in cybersecurity."
             ],
             images: [
                 "./assets/media/HackTheHolidays_1.png",
@@ -101,11 +102,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     tooltip.innerText = social.tooltip;
 
                     a.appendChild(tooltip);
-                };
+                }
 
                 socialsContainer.appendChild(a);
             });
-        };
+        }
 
         const galleryContainer = document.getElementById("overlay-gallery");
         galleryContainer.innerHTML = "";
@@ -115,10 +116,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 img.src = imgSrc;
                 img.alt = `${item.title} image`;
                 img.classList.add("gallery-img");
-                img.addEventListener("click", () => openImageFullScreen(imgSrc));
+                img.addEventListener("click", () => openImageFullScreen(imgSrc, item.images));
                 galleryContainer.appendChild(img);
             });
-        };
+        }
 
         overlay.style.display = "flex";
 
@@ -133,15 +134,36 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("overlay").style.display = "none";
     }
 
-    function openImageFullScreen(src) {
+    function openImageFullScreen(src, allImages) {
+        let currentIndex = allImages.indexOf(src);
+
         const overlayImage = document.createElement("div");
         overlayImage.classList.add("fullscreen-overlay");
         overlayImage.innerHTML = `
-            <img src="${src}" class="fullscreen-img">
             <span class="close-img-btn" onclick="this.parentElement.remove()">&times;</span>
+            <img src="${src}" class="fullscreen-img" id="fullscreen-active-img">
+            <button class="nav-arrow left-arrow">&#10094;</button>
+            <button class="nav-arrow right-arrow">&#10095;</button>
         `;
 
         document.body.appendChild(overlayImage);
+
+        function updateImage(index) {
+            const img = document.getElementById("fullscreen-active-img");
+            img.src = allImages[index];
+        }
+
+        overlayImage.querySelector(".left-arrow").addEventListener("click", (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
+            updateImage(currentIndex);
+        });
+
+        overlayImage.querySelector(".right-arrow").addEventListener("click", (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % allImages.length;
+            updateImage(currentIndex);
+        });
 
         overlayImage.addEventListener("click", (event) => {
             if (event.target === overlayImage) {
