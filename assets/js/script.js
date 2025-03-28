@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     tooltip: "Visit the CTF platform"
                 }
             ],
-            badges: ["CTF Ninja 🥷", "Forensics Wizard 🔍", "Payload Crafter 💣", "Web Warrior 🌐", "Reverse Engineer 🧠"]
         }
     ];
 
@@ -35,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Even with restrictions on what he could publicly reveal, Robbe delivered an inspiring and practical talk...",
                 "In the end, this Tech&Meet experience was not just informative—it was motivating."
             ],
+
             images: [
                 "./assets/media/HackTheHolidays_1.png",
                 "./assets/media/HackTheHolidays_2.png",
