@@ -198,12 +198,16 @@ p {
 
 /* Footer */
 footer {
-    background-color: #000000;
-    color: #ff1a1a;
-    padding: 20px;
+    padding: 30px 20px;
     text-align: center;
-    font-size: 1.1rem;
-    box-shadow: 0 -2px 25px rgba(255, 26, 26, 0.6);
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 26, 26, 0.6);
+    box-shadow: 0 -4px 35px rgba(255, 26, 26, 0.4);
+    border-top: 1px solid rgba(255, 26, 26, 0.3);
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
 }
 
 /* Fullscreen image overlay */
