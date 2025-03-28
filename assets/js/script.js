@@ -8,11 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Our team collaborated closely, dividing tasks based on individual strengths and constantly sharing insights. We pushed through difficult challenges, celebrated small victories, and refined our approach along the way. By the end of the week, we earned 4th place on the official scoreboard — a result we're proud of.",
                 "More than the score, the experience deepened my interest in cybersecurity, sharpened my problem-solving skills, and reinforced the value of teamwork. It was an intense and rewarding week that reminded me why I love diving into systems, breaking things apart, and learning how they work.",
             ],
+            images: [
+                "./assets/media/ctfd-leaderboard.png"
+            ],
             socials: [
                 {
                     platform: "CTFd",
                     link: "https://ctf.cyber3lab.be",
-                    icon: "./assets/media/ctfd-leaderboard.png",
+                    icon: "./assets/media/ico.ico",
                     tooltip: "Visit the CTF platform"
                 }
             ]
