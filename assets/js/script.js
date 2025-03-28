@@ -3,10 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             title: "Howest CTF Project Week",
             description: [
-                "During the Cybersecurity Project Week at Howest, I took part in a Capture The Flag (CTF) competition — an intense, hands-on challenge that tested both technical skills and teamwork under pressure. Hosted on the CTFd platform, the competition simulated real-world cybersecurity scenarios across a broad range of topics.",
-                "The CTF featured challenges in cryptography, steganography, reverse engineering, forensics, web exploitation, trivia, programming, and more. Some tasks had us decoding encrypted messages or analyzing memory dumps, while others involved stress testing Docker containers and patching binaries. Each challenge required creativity, persistence, and a strategic mindset.",
-                "Our team collaborated closely, dividing tasks based on individual strengths and constantly sharing insights. We pushed through difficult challenges, celebrated small victories, and refined our approach along the way. By the end of the week, we earned 4th place on the official scoreboard — a result we're proud of.",
-                "More than the score, the experience deepened my interest in cybersecurity, sharpened my problem-solving skills, and reinforced the value of teamwork. It was an intense and rewarding week that reminded me why I love diving into systems, breaking things apart, and learning how they work.",
+                "During the Cybersecurity Project Week at Howest, I took part in a Capture The Flag (CTF) competition — an intense, hands-on challenge that tested both technical skills and teamwork under pressure...",
+                "The CTF featured challenges in cryptography, steganography, reverse engineering, forensics, web exploitation, trivia, programming, and more...",
+                "Our team collaborated closely, dividing tasks based on individual strengths...",
+                "By the end of the week, we earned 4th place on the official scoreboard — a result we're proud of."
             ],
             images: [
                 "./assets/media/ctfd-leaderboard.png",
@@ -20,7 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     icon: "./assets/media/ico.ico",
                     tooltip: "Visit the CTF platform"
                 }
-            ]
+            ],
+            badges: ["CTF Ninja 🥷", "Forensics Wizard 🔍", "Payload Crafter 💣", "Web Warrior 🌐", "Reverse Engineer 🧠"]
         }
     ];
 
@@ -28,17 +29,17 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             title: "Tech&Meet: Insights from Belgium's Top Ethical Hacker",
             description: [
-                "On December 17, 2024, I had the opportunity to attend a Tech&Meet talk at Howest University, where Robbe Verwilghen—an accomplished ethical hacker and Howest alumnus—shared his story. Hailing from Lebbeke, Robbe was named 'Ethical Government Hacker of 2024' and earned an exclusive SANS training and GIAC certification worth over €10,000. He lightheartedly embraced the nickname 'The Dupe King' for logging the most duplicate reports during the challenge.",
-                "The talk centered around Robbe’s participation in Belgium’s government cybersecurity initiative, 'Hack The Government,' which invites ethical hackers to assess and uncover vulnerabilities in public systems. Although much of the work is classified, he gave us a glimpse into his mindset and creative approach—summed up in his phrase: 'Act dumb and click on everything,' a reminder that unconventional thinking can lead to surprising results.",
-                "He also reflected on his broader career in cybersecurity, from bug bounty hunting to roles as a QA engineer and pentester. His work at Intigriti, one of Europe’s top security platforms, allowed him to explore advanced techniques like SQL injection, payload crafting, and real-world penetration testing. Robbe generously shared resources and scripts, helping attendees better understand how ethical hackers probe systems and discover flaws.",
-                "Even with restrictions on what he could publicly reveal, Robbe delivered an inspiring and practical talk. His enthusiasm was infectious, and it was clear why he's so highly regarded in the Belgian cybersecurity scene. The session emphasized the growing role of ethical hacking in national defense and digital safety.",
-                "In the end, this Tech&Meet experience was not just informative—it was motivating. Robbe's journey showed how passion, curiosity, and a problem-solving mindset can lead to exciting opportunities in cybersecurity."
+                "On December 17, 2024, I had the opportunity to attend a Tech&Meet talk at Howest University, where Robbe Verwilghen—an accomplished ethical hacker—shared his story...",
+                "The talk centered around Robbe’s participation in Belgium’s government cybersecurity initiative, 'Hack The Government'...",
+                "He also reflected on his broader career in cybersecurity...",
+                "Even with restrictions on what he could publicly reveal, Robbe delivered an inspiring and practical talk...",
+                "In the end, this Tech&Meet experience was not just informative—it was motivating."
             ],
             images: [
                 "./assets/media/HackTheHolidays_1.png",
                 "./assets/media/HackTheHolidays_2.png",
                 "./assets/media/HackTheHolidays_3.jpg"
-            ]
+            ],
         }
     ];
 
@@ -79,6 +80,17 @@ document.addEventListener("DOMContentLoaded", function () {
             textContainer.appendChild(p);
         });
 
+        const badgeContainer = document.getElementById("overlay-badges");
+        badgeContainer.innerHTML = "";
+        if (item.badges && item.badges.length > 0) {
+            item.badges.forEach(badge => {
+                const span = document.createElement("span");
+                span.classList.add("badge");
+                span.innerText = badge;
+                badgeContainer.appendChild(span);
+            });
+        }
+
         const socialsContainer = document.getElementById("overlay-socials");
         socialsContainer.innerHTML = "";
         if (item.socials && item.socials.length > 0) {
@@ -100,7 +112,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     const tooltip = document.createElement("span");
                     tooltip.classList.add("tooltip");
                     tooltip.innerText = social.tooltip;
-
                     a.appendChild(tooltip);
                 }
 
@@ -141,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
         overlayImage.classList.add("fullscreen-overlay");
         overlayImage.innerHTML = `
             <span class="close-img-btn" onclick="this.parentElement.remove()">&times;</span>
-            <img src="${src}" class="fullscreen-img" id="fullscreen-active-img">
+            <img src="${src}" class="fullscreen-img" id="fullscreen-active-img" alt="">
             <button class="nav-arrow left-arrow">&#10094;</button>
             <button class="nav-arrow right-arrow">&#10095;</button>
         `;
