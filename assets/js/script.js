@@ -32,6 +32,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Beyond competition strategies, Robbe walked us through his journey in cybersecurity, from bug bounty hunting to becoming a QA engineer and penetration tester. His work with Intigriti, a leading European cybersecurity firm, provided fascinating insights into real-world security testing, payload crafting, and methodologies like SQL injection. He also shared useful resources and scripts for testing vulnerabilities, helping attendees gain a better understanding of how ethical hackers analyze and secure digital systems.",
                 "Despite the limitations on discussing classified details, Robbe managed to deliver an engaging and insightful session. His energy and passion for cybersecurity were evident, making it clear why he’s one of Belgium’s top ethical hackers. The event reinforced the importance of ethical hacking in strengthening national security and highlighted the opportunities available in this field for those willing to dive deep into the world of cybersecurity.",
                 "Overall, this Tech&Meet session was both inspiring and informative. Hearing firsthand from someone who has actively contributed to securing government infrastructure was an incredible experience. Robbe’s journey is proof that curiosity, persistence, and a hacker mindset can open doors to exciting and impactful careers in cybersecurity."
+            ],
+            images: [
+                "./assets/media/HackTheHolidays_1.png",
+                "./assets/media/HackTheHolidays_2.png",
+                "./assets/media/HackTheHolidays_3.jpg"
             ]
         }
     ];
