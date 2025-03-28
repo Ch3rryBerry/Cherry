@@ -376,7 +376,7 @@ footer {
     padding: 10px;
     cursor: pointer;
     z-index: 10001;
-    transition: transform 0.2s ease-in-out, text-shadow 0.3s ease;
+    transition: transform 0.2s ease-in-out, text-shadow 0.3s ease, color 0.3s ease;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
     display: flex;
     align-items: center;
@@ -384,8 +384,9 @@ footer {
 }
 
 .nav-arrow:hover {
-    transform: translateY(-50%) scale(1.2);
-    text-shadow: 0 0 25px rgba(255, 255, 255, 1), 0 0 35px #ff1a1a;
+    transform: translateY(-50%) scale(1.05);
+    text-shadow: 0 0 10px rgba(255, 26, 26, 0.8), 0 0 20px rgba(255, 26, 26, 0.5);
+    color: #ff1a1a;
 }
 
 .left-arrow {
