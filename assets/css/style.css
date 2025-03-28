@@ -245,6 +245,119 @@ footer {
     color: #ff1a1a;
     padding: 20px;
     text-align: center;
-    font-size: 1.1em;
+    font-size: 1.1rem;
     box-shadow: 0 -2px 25px rgba(255, 26, 26, 0.6);
+}
+
+.fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.fullscreen-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 0 40px rgba(255, 26, 26, 0.6);
+    transform: scale(0.8);
+    animation: zoomIn 0.4s ease-out forwards;
+}
+
+.close-img-btn {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 3rem;
+    color: #ff1a1a;
+    cursor: pointer;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.close-img-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.social-icon-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+}
+
+.tooltip {
+    visibility: hidden;
+    width: max-content;
+    background-color: #ff1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 6px 12px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    box-shadow: 0 0 10px rgba(255, 26, 26, 0.6);
+}
+
+.social-icon-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Optional arrow below tooltip */
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* Arrow points down */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #ff1a1a transparent transparent transparent;
+}
+
+.github-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 40px;
 }
