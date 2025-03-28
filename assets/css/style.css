@@ -9,8 +9,8 @@ html, body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    background: #0d0d0d;  /* Nog donkerdere achtergrond */
-    color: #e0e0e0;  /* Bone white text color */
+    background: #0d0d0d;
+    color: #e0e0e0;
     text-align: center;
     line-height: 1.5;
     overflow-x: hidden;
@@ -20,7 +20,7 @@ html, body {
 header {
     background: radial-gradient(circle, #222222, #000000);
     padding: 40px 20px;
-    box-shadow: 0px 0px 30px rgba(179, 58, 58, 0.5);  /* Blood Red shadow */
+    box-shadow: 0px 0px 35px rgba(255, 26, 26, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,9 +40,9 @@ header {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    border: 3px solid #b33a3a;  /* Blood Red border */
+    border: 3px solid #ff1a1a;
     transition: transform 0.3s ease-in-out;
-    filter: drop-shadow(0 0 10px rgba(179, 58, 58, 0.7));  /* Red glow effect */
+    filter: drop-shadow(0 0 12px rgba(255, 26, 26, 0.8));
 }
 
 .profile-pic:hover {
@@ -59,7 +59,7 @@ header {
     font-size: 1.8em;
     font-weight: bold;
     text-transform: uppercase;
-    background: linear-gradient(to right, #b33a3a, #d32f2f);  /* Gradient for red tones */
+    background: linear-gradient(to right, #ff1a1a, #ff4d4d);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -67,17 +67,9 @@ header {
 }
 
 @keyframes flicker {
-    0% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.8;
-    }
-
-    100% {
-        opacity: 1;
-    }
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
 }
 
 .container {
@@ -89,22 +81,22 @@ header {
 section {
     margin: 80px 0;
     padding: 40px;
-    background: #0a0a0a;  /* Donkerder achtergrond */
+    background: #0a0a0a;
     border-radius: 12px;
-    box-shadow: 0 0 25px rgba(179, 58, 58, 0.3);  /* Blood Red shadow */
+    box-shadow: 0 0 30px rgba(255, 26, 26, 0.4);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 section:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 40px rgba(179, 58, 58, 0.6);  /* Red shadow on hover */
+    box-shadow: 0 0 50px rgba(255, 26, 26, 0.8);
 }
 
 h2 {
-    color: #b33a3a;  /* Blood Red color for headings */
+    color: #ff1a1a;
     margin-bottom: 30px;
     font-size: 1.8em;
-    text-shadow: 0 0 15px rgba(179, 58, 58, 0.7);  /* Red glow effect */
+    text-shadow: 0 0 20px rgba(255, 26, 26, 0.9);
 }
 
 p {
@@ -120,19 +112,19 @@ p {
 }
 
 .project-item, .blog-item {
-    background: #111111;  /* Donkerder kaart */
+    background: #111111;
     padding: 20px;
     border-radius: 8px;
     width: 350px;
     text-align: left;
     cursor: pointer;
     transition: 0.3s;
-    box-shadow: 0 4px 10px rgba(179, 58, 58, 0.3);  /* Red shadow */
+    box-shadow: 0 4px 10px rgba(255, 26, 26, 0.3);
 }
 
 .project-item:hover, .blog-item:hover {
-    background: #191919;  /* Hover-donkerder */
-    box-shadow: 0 4px 15px rgba(179, 58, 58, 0.6);  /* Red shadow on hover */
+    background: #191919;
+    box-shadow: 0 4px 15px rgba(255, 26, 26, 0.6);
 }
 
 .project-item h3, .blog-item h3 {
@@ -173,22 +165,22 @@ p {
 }
 
 .overlay-content {
-    background: #0a0a0a;  /* Nog donkerder overlay box */
+    background: #0a0a0a;
     padding: 40px;
     border-radius: 10px;
     width: 65%;
     text-align: left;
-    box-shadow: 0 0 25px rgba(179, 58, 58, 0.5);  /* Red shadow */
+    box-shadow: 0 0 30px rgba(255, 26, 26, 0.5);
     max-height: 80vh;
     overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: #b33a3a #0a0a0a;
+    scrollbar-color: #ff1a1a #0a0a0a;
 }
 
 .overlay-content h2 {
     font-size: 2em;
     margin-bottom: 20px;
-    text-shadow: 0 0 15px rgba(179, 58, 58, 0.7);  /* Red glow effect */
+    text-shadow: 0 0 20px rgba(255, 26, 26, 0.9);
 }
 
 #overlay-text p {
@@ -201,7 +193,7 @@ p {
     right: 25px;
     font-size: 50px;
     cursor: pointer;
-    color: #b33a3a;  /* Blood Red color */
+    color: #ff1a1a;
     background: rgba(0, 0, 0, 0.5);
     padding: 12px 18px;
     border-radius: 8px;
@@ -219,13 +211,13 @@ p {
 }
 
 .social-links a {
-    color: #b33a3a;
+    color: #ff1a1a;
     font-size: 1.5em;
     transition: 0.3s;
 }
 
 .social-links a:hover {
-    color: #d32f2f;  /* Donkerdere rode toon voor hover effect */
+    color: #ff4d4d;
 }
 
 .gallery {
@@ -240,7 +232,7 @@ p {
     height: 100px;
     border-radius: 10px;
     object-fit: cover;
-    border: 3px solid #b33a3a;
+    border: 3px solid #ff1a1a;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -250,9 +242,9 @@ p {
 
 footer {
     background-color: #000000;
-    color: #b33a3a;  /* Red text for footer */
+    color: #ff1a1a;
     padding: 20px;
     text-align: center;
     font-size: 0.9em;
-    box-shadow: 0 -2px 20px rgba(179, 58, 58, 0.5);  /* Red shadow on footer */
+    box-shadow: 0 -2px 25px rgba(255, 26, 26, 0.6);
 }
