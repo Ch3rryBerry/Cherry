@@ -232,12 +232,14 @@ p {
     height: 100px;
     border-radius: 10px;
     object-fit: cover;
-    border: 3px solid #ff1a1a;
-    transition: transform 0.3s ease-in-out;
+    border: 3px solid #800000; /* darker red */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease;
 }
 
 .gallery img:hover {
     transform: scale(1.05);
+    border-color: #ff1a1a;
+    box-shadow: 0 4px 15px rgba(255, 26, 26, 0.6);
 }
 
 footer {
@@ -360,4 +362,36 @@ footer {
     align-items: center;
     gap: 12px;
     margin-top: 40px;
+}
+
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 3rem;
+    line-height: 1;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10001;
+    transition: transform 0.2s ease-in-out, text-shadow 0.3s ease;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-arrow:hover {
+    transform: translateY(-50%) scale(1.2);
+    text-shadow: 0 0 25px rgba(255, 255, 255, 1), 0 0 35px #ff1a1a;
+}
+
+.left-arrow {
+    left: 30px;
+}
+
+.right-arrow {
+    right: 30px;
 }
